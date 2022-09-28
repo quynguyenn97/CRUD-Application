@@ -9,8 +9,6 @@ import ModalConfirm from "./ModalConfirm";
 import "./TableUser.scss";
 import { debounce } from "lodash";
 import { CSVLink, CSVDownload } from "react-csv";
-import { toast } from "react-toastify";
-import Papa from "papaparse";
 
 const TableUser = () => {
     const [listUsers, setListUsers] = useState([]);
@@ -112,45 +110,6 @@ const TableUser = () => {
                 arr[1] = item.email;
                 arr[2] = item.first_name;
                 arr[3] = item.last_name;
-                result.push(arr);
-            });
-            setDataExport(result);
-            done();
-        }
-    };
-    const handleImportCSV = (event) => {
-        if (event.target && event.target.files && event.target.file[0]) {
-            let file = event.target.files[0];
-            if (file.type !== "text/csv") {
-                toast.error("Only accept csv files...");
-                return;
-            }
-            Papa.parse(file, {
-                header: true,
-                complete: function (result) {
-                    let rawCSV = result.data;
-                    if (rawCSV.length > 0) {
-                        if (
-                            rawCSV[0][0] !== "email" ||
-                            rawCSV[0][1] !== "fisrt_name"
-                        ) {
-                            toast.error("Wrong format header CSV file!");
-                        } else {
-                            let result = [];
-                            rawCSV.map((item, index) => {
-                                if (index > 0 && item.length === 3) {
-                                    let obj = {};
-                                    obj.email = item[0];
-                                    obj.first_name = item[1];
-                                    obj.last_name = item[2];
-                                    result.push(obj);
-                                }
-                            });
-                        }
-                    } else {
-                        toast.error("wrong format CSV file");
-                    }
-                },
             });
         }
     };

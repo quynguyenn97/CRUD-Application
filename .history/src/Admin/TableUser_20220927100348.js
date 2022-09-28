@@ -9,8 +9,6 @@ import ModalConfirm from "./ModalConfirm";
 import "./TableUser.scss";
 import { debounce } from "lodash";
 import { CSVLink, CSVDownload } from "react-csv";
-import { toast } from "react-toastify";
-import Papa from "papaparse";
 
 const TableUser = () => {
     const [listUsers, setListUsers] = useState([]);
@@ -23,7 +21,6 @@ const TableUser = () => {
     const [dataUserDelete, setDataUserDelete] = useState({});
     const [sortBy, setSortBy] = useState("");
     const [sortField, setSortField] = useState("");
-    const [dataExport, setDataExport] = useState("");
     const handleClose = () => {
         setIsShowModalAddNew(false);
         setIsShowModalEditUser(false);
@@ -95,82 +92,28 @@ const TableUser = () => {
         } else {
             getUsers(1);
         }
-    }, 500);
+    }, 2000);
     const csvData = [
         ["firstname", "lastname", "email"],
         ["Ahmed", "Tomi", "ah@smthing.co.com"],
         ["Raed", "Labes", "rl@smthing.co.com"],
         ["Yezzi", "Min l3b", "ymin@cocococo.com"],
     ];
-    const getUsersExport = (event, done) => {
-        let result = [];
-        if (listUsers && listUsers.length > 0) {
-            result.push(["Id", "Email", "First name", "Last name"]);
-            listUsers.map((item, index) => {
-                let arr = [];
-                arr[0] = item.id;
-                arr[1] = item.email;
-                arr[2] = item.first_name;
-                arr[3] = item.last_name;
-                result.push(arr);
-            });
-            setDataExport(result);
-            done();
-        }
-    };
-    const handleImportCSV = (event) => {
-        if (event.target && event.target.files && event.target.file[0]) {
-            let file = event.target.files[0];
-            if (file.type !== "text/csv") {
-                toast.error("Only accept csv files...");
-                return;
-            }
-            Papa.parse(file, {
-                header: true,
-                complete: function (result) {
-                    let rawCSV = result.data;
-                    if (rawCSV.length > 0) {
-                        if (
-                            rawCSV[0][0] !== "email" ||
-                            rawCSV[0][1] !== "fisrt_name"
-                        ) {
-                            toast.error("Wrong format header CSV file!");
-                        } else {
-                            let result = [];
-                            rawCSV.map((item, index) => {
-                                if (index > 0 && item.length === 3) {
-                                    let obj = {};
-                                    obj.email = item[0];
-                                    obj.first_name = item[1];
-                                    obj.last_name = item[2];
-                                    result.push(obj);
-                                }
-                            });
-                        }
-                    } else {
-                        toast.error("wrong format CSV file");
-                    }
-                },
-            });
-        }
-    };
     return (
         <>
             <div className="add-new my-3 d-flex justify-content-between">
                 <span>List Users:</span>
-                <div className="group-btns">
-                    <label htmlFor="test" className="btn btn-warning">
+                <div>
+                    <button className="btn btn-warning">
                         <i className="fas fa-upload"></i> Import
-                    </label>
-                    <input id="test" type="file" hidden />
+                    </button>
                     <CSVLink
-                        data={listUsers}
+                        data={csvData}
                         filename={"users.csv"}
-                        className="btn btn-primary"
-                        asyncOnClick={true}
-                        onClick={getUsersExport}>
+                        className="btn btn-primary">
                         <i className="fas fa-arrow-down"></i> Export
                     </CSVLink>
+
                     <button
                         className="btn btn-success"
                         onClick={() => handleAddNewUser()}>

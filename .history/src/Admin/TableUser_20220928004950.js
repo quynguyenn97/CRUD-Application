@@ -10,7 +10,6 @@ import "./TableUser.scss";
 import { debounce } from "lodash";
 import { CSVLink, CSVDownload } from "react-csv";
 import { toast } from "react-toastify";
-import Papa from "papaparse";
 
 const TableUser = () => {
     const [listUsers, setListUsers] = useState([]);
