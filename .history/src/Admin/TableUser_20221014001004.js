@@ -124,15 +124,14 @@ const TableUser = () => {
                 return;
             }
             Papa.parse(file, {
-                // header: true,
-                complete: function (results) {
-                    let rawCSV = results.data;
+                header: true,
+                complete: function (result) {
+                    let rawCSV = result.data;
                     if (rawCSV.length > 0) {
                         if (rawCSV[0] && rawCSV[0].length === 3) {
                             if (
                                 rawCSV[0][0] !== "email" ||
-                                rawCSV[0][1] !== "first_name" ||
-                                rawCSV[0][2] !== "last_name"
+                                rawCSV[0][1] !== "fisrt_name"
                             ) {
                                 toast.error("Wrong format header CSV file!");
                             } else {
@@ -146,15 +145,14 @@ const TableUser = () => {
                                         result.push(obj);
                                     }
                                 });
-                                setListUsers(result);
                             }
                         } else {
                             toast.error("wrong format CSV file");
                         }
-                    } else toast.error("Not found data");
+                    }
                 },
             });
-        }
+        } else toast.error("Not found data");
     };
     return (
         <>

@@ -127,11 +127,12 @@ const TableUser = () => {
                 // header: true,
                 complete: function (results) {
                     let rawCSV = results.data;
+                    console.log(rawCSV[0]);
                     if (rawCSV.length > 0) {
                         if (rawCSV[0] && rawCSV[0].length === 3) {
                             if (
                                 rawCSV[0][0] !== "email" ||
-                                rawCSV[0][1] !== "first_name" ||
+                                rawCSV[0][1] !== "fisrt_name" ||
                                 rawCSV[0][2] !== "last_name"
                             ) {
                                 toast.error("Wrong format header CSV file!");

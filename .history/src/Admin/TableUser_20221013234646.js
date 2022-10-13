@@ -23,7 +23,7 @@ const TableUser = () => {
     const [dataUserDelete, setDataUserDelete] = useState({});
     const [sortBy, setSortBy] = useState("");
     const [sortField, setSortField] = useState("");
-    const [dataExport, setDataExport] = useState([]);
+    const [dataExport, setDataExport] = useState("");
     const handleClose = () => {
         setIsShowModalAddNew(false);
         setIsShowModalEditUser(false);
@@ -117,44 +117,41 @@ const TableUser = () => {
         }
     };
     const handleImportCSV = (event) => {
-        if (event.target && event.target.files && event.target.files[0]) {
+        if (event.target && event.target.files && event.target.file[0]) {
             let file = event.target.files[0];
+            console.log(file);
             if (file.type !== "text/csv") {
                 toast.error("Only accept csv files...");
                 return;
             }
             Papa.parse(file, {
-                // header: true,
-                complete: function (results) {
-                    let rawCSV = results.data;
+                header: true,
+                complete: function (result) {
+                    let rawCSV = result.data;
                     if (rawCSV.length > 0) {
-                        if (rawCSV[0] && rawCSV[0].length === 3) {
-                            if (
-                                rawCSV[0][0] !== "email" ||
-                                rawCSV[0][1] !== "first_name" ||
-                                rawCSV[0][2] !== "last_name"
-                            ) {
-                                toast.error("Wrong format header CSV file!");
-                            } else {
-                                let result = [];
-                                rawCSV.map((item, index) => {
-                                    if (index > 0 && item.length === 3) {
-                                        let obj = {};
-                                        obj.email = item[0];
-                                        obj.first_name = item[1];
-                                        obj.last_name = item[2];
-                                        result.push(obj);
-                                    }
-                                });
-                                setListUsers(result);
-                            }
+                        if (
+                            rawCSV[0][0] !== "email" ||
+                            rawCSV[0][1] !== "fisrt_name"
+                        ) {
+                            toast.error("Wrong format header CSV file!");
                         } else {
-                            toast.error("wrong format CSV file");
+                            let result = [];
+                            rawCSV.map((item, index) => {
+                                if (index > 0 && item.length === 3) {
+                                    let obj = {};
+                                    obj.email = item[0];
+                                    obj.first_name = item[1];
+                                    obj.last_name = item[2];
+                                    result.push(obj);
+                                }
+                            });
                         }
-                    } else toast.error("Not found data");
+                    } else {
+                        toast.error("wrong format CSV file");
+                    }
                 },
             });
-        }
+        } else toast.error("Not found data");
     };
     return (
         <>
@@ -173,7 +170,7 @@ const TableUser = () => {
                         onChange={(event) => handleImportCSV(event)}
                     />
                     <CSVLink
-                        data={dataExport}
+                        data={listUsers}
                         filename={"users.csv"}
                         className="btn btn-primary"
                         asyncOnClick={true}
