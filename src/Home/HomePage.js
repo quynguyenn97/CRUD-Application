@@ -1,4 +1,3 @@
-import videoHomepage from "../assets/video.mp4";
 import Sidebar from "../Admin/SideBar";
 import { useState } from "react";
 

@@ -10,7 +10,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { handleLogoutRedux } from "./redux/actions/UserAction";
 import { useEffect } from "react";
 import "./Header.scss";
-import LogoHeader from "./assets/logo-header.png";
 import { FaCross } from "react-icons/fa";
 
 const Header = (props) => {

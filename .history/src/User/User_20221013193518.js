@@ -1,0 +1,9 @@
+import "./User.scss";
+const User = () => {
+    return (
+        <div className="user-content">
+            <img src={user} />
+        </div>
+    );
+};
+export default User;
