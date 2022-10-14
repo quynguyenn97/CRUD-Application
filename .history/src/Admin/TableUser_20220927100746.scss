@@ -1,0 +1,15 @@
+.sort-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    i {
+        padding: 5px;
+        cursor: pointer;
+    }
+}
+.add-new {
+    .group-btns {
+        display: flex;
+        gap: 10px;
+    }
+}
