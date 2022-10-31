@@ -1,0 +1,67 @@
+{
+    "homepage": {
+        "title1": "Chào Bạn, Nụ Cười Của Bạn Làm Tôi Hạnh Phúc",
+        "title2": "Chỉ có duy nhất 2 cách để bạn sống cuộc đời của mình. Một là sống như thể không gì là phép màu cả. Cách còn lại là sống như thể tất cả mọi thứ đều là phép màu.",
+        "title3": "Bắt đầu - Hãy đọc tôi"
+    },
+    "header": {
+        "title1": "Ứng Dụng CRUD",
+        "title2": "Trang chủ",
+        "title3": "Quản trị",
+        "title4": "Xin chào",
+        "title5": "Cài đặt",
+        "title6": "Đăng nhập",
+        "title7": "Đăng xuất"
+    },
+    "modalstart": {
+        "head": "Mô tả ứng dụng quản lí người dùng:",
+        "title1": "- Sử dụng API từ website: https://reqres.in/ để làm ứng dụng",
+        "title2": "- Sử dụng công nghệ ReactJS, Redux-thunk, các thư viện để làm các chức năng bao gồm:",
+        "title3": "1. Đăng nhập",
+        "title4": "2. Đăng xuất",
+        "title5": "3. Thêm mới người dùng",
+        "title6": "4. Chỉnh sửa người dùng",
+        "title7": "5. Xoá người dùng",
+        "title8": "6. Hiển thị người dùng",
+        "title9": "7. Tìm kiếm người dùng bằng email",
+        "title10": "8. Sắp xếp người dùng theo ID, Họ tên",
+        "title11": "9. Thêm bảng người dùng bằng file.csv",
+        "title12": "10. Xuất bảng người dùng sang file.csv",
+        "title13": "11. Thay đổi ngôn ngữ",
+        "title14": "10. Export User to file.csv",
+        "title15": "10. Export User to file.csv",
+        "title16": "10. Export User to file.csv",
+        "end": "Đóng"
+    },
+    "private": {
+        "title1": "Bạn đang có 1 lỗi!!",
+        "title2": "Bạn không có quyền truy cập chức năng này"
+    },
+    "login": {
+        "title1": "Đăng nhập",
+        "title2": "Địa chỉ Email:",
+        "title3": "Nhập Email",
+        "title4": "Nhập mật khẩu",
+        "title5": "Đăng nhập",
+        "title6": "Trở về trang chủ"
+    },
+    "table": {
+        "title1": "Danh sách người dùng:",
+        "title2": "Nhập bảng",
+        "title3": "Xuất bảng",
+        "title4": "Thêm mới người dùng",
+        "title5": "3. Add User",
+        "title6": "4. Edit User",
+        "title7": "5. Delete User",
+        "title8": "6. Show All User",
+        "title9": "7. Search User by email",
+        "title10": "8. Sort by FirstName, Id",
+        "title11": "9. Import User from file.csv",
+        "title12": "10. Export User to file.csv",
+        "title13": "11. Change language",
+        "title14": "10. Export User to file.csv",
+        "title15": "10. Export User to file.csv",
+        "title16": "10. Export User to file.csv",
+        "end": "Close"
+    }
+}

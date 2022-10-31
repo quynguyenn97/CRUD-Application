@@ -66,7 +66,8 @@ const Header = (props) => {
                                         </span>
                                     )}
                                     <NavDropdown title="Settings">
-                                        {user && user.auth === false ? (
+                                        {(user && user.auth === false) ||
+                                        user.auth === null ? (
                                             <Link
                                                 className="dropdown-item"
                                                 to="/login"

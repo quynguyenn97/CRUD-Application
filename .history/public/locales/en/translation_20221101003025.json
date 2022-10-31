@@ -1,0 +1,67 @@
+{
+    "homepage": {
+        "title1": "Hi There, Your Smile Makes My Day",
+        "title2": "There are only two ways to live your life. One is as though nothing is a miracle. The other is as though everything is a miracle.",
+        "title3": "Get started - Read me"
+    },
+    "header": {
+        "title1": "CRUD Application",
+        "title2": "Home",
+        "title3": "Manage Users",
+        "title4": "Welcome",
+        "title5": "Settings",
+        "title6": "Log in",
+        "title7": "Log out"
+    },
+    "modalstart": {
+        "head": "CRUD APP Description:",
+        "title1": "Use API from website: https://reqres.in/ to create app",
+        "title2": "Use ReactJS, Redux-thunk, React Libraries to create CRUD app include:",
+        "title3": "1. Login",
+        "title4": "2. Logout",
+        "title5": "3. Add User",
+        "title6": "4. Edit User",
+        "title7": "5. Delete User",
+        "title8": "6. Show All User",
+        "title9": "7. Search User by email",
+        "title10": "8. Sort by FirstName, Id",
+        "title11": "9. Import User from file.csv",
+        "title12": "10. Export User to file.csv",
+        "title13": "11. Change language",
+        "title14": "10. Export User to file.csv",
+        "title15": "10. Export User to file.csv",
+        "title16": "10. Export User to file.csv",
+        "end": "Close"
+    },
+    "private": {
+        "title1": "Oh snap! You got an error!",
+        "title2": "You don't have permisson to acess this route"
+    },
+    "login": {
+        "title1": "Login",
+        "title2": "Email address:",
+        "title3": "Enter email",
+        "title4": "Enter password",
+        "title5": "Login",
+        "title6": "Go back"
+    },
+    "table": {
+        "title1": "List Users:",
+        "title2": "Import",
+        "title3": "Export",
+        "title4": "Add New User",
+        "title5": "Search user by email...",
+        "title6": "First Name",
+        "title7": "Last Name",
+        "title8": "Actions",
+        "title9": "Edit",
+        "title10": "8. Sort by FirstName, Id",
+        "title11": "9. Import User from file.csv",
+        "title12": "10. Export User to file.csv",
+        "title13": "11. Change language",
+        "title14": "10. Export User to file.csv",
+        "title15": "10. Export User to file.csv",
+        "title16": "10. Export User to file.csv",
+        "end": "Close"
+    }
+}

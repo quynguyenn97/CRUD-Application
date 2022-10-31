@@ -1,0 +1,25 @@
+{
+    "homepage": {
+        "title1": "Chào Bạn, Nụ Cười Của Bạn Làm Tôi Hạnh Phúc",
+        "title2": "Chỉ có duy nhất 2 cách để bạn sống cuộc đời của mình. Một là sống như thể không gì là phép màu cả. Cách còn lại là sống như thể tất cả mọi thứ đều là phép màu.",
+        "title3": "Bắt đầu - Hãy đọc tôi"
+    },
+    "header": {
+        "title1": "Ứng Dụng CRUD",
+        "title2": "Trang chủ",
+        "title3": "Quản trị",
+        "title4": "Xin chào",
+        "title5": "Cài đặt",
+        "title6": "Đăng nhập",
+        "title7": "Đăng xuất"
+    },
+    "modalstart": {
+        "title1": "Sử dụng API từ website: https://reqres.in/ để làm ứng dụng",
+        "title2": "Home",
+        "title3": "Manage Users",
+        "title4": "Welcome",
+        "title5": "Settings",
+        "title6": "Log in",
+        "title7": "Log out"
+    }
+}
