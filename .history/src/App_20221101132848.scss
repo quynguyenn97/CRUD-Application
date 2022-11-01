@@ -170,18 +170,18 @@ video {
         .homepage-container {
             .homepage-content {
                 position: relative;
-                padding-top: 200px;
-                width: 50%;
+                padding-top: 250px;
+                width: 60%;
                 display: flex;
                 flex-direction: column;
                 gap: 30px;
 
                 .title-1 {
-                    font-size: 50px;
+                    font-size: 40px;
                     font-weight: 600;
                 }
                 .title-2 {
-                    font-size: 30px;
+                    font-size: 25px;
                 }
                 .title-3 {
                     button {
@@ -235,7 +235,7 @@ video {
         }
     }
 }
-@media only screen and (max-width: 990px) {
+@media only screen and (max-width: 950px) {
     .app-container {
         .homepage-container {
             .homepage-content {

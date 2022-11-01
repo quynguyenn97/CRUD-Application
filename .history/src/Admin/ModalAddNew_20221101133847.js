@@ -1,37 +1,27 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
-import { putEditUser } from "../services/apiServices";
-import { useTranslation, Trans } from "react-i18next";
+import { postCreateUser } from "../services/apiServices";
 import { toast } from "react-toastify";
-const ModalEditUser = (props) => {
-    const {
-        handleClose,
-        show,
-        dataUserEdit,
-        handleEditUserFromModal,
-        handleSubmit,
-    } = props;
-    const [name, setName] = useState("");
-    const { t, i18n } = useTranslation();
-    const [job, setJob] = useState("");
-    useEffect(() => {
-        if (show) {
-            setName(dataUserEdit.first_name);
-        }
-    }, [dataUserEdit]);
+import { useTranslation, Trans } from "react-i18next";
 
-    const handleSubmitEditUser = async () => {
-        let res = await putEditUser(name, job);
-        if (res && res.name) {
-            handleEditUserFromModal({
-                first_name: name,
-                id: dataUserEdit.id,
-            });
+const ModalAddNew = (props) => {
+    const { handleClose, show, handleUpdateUser } = props;
+    const [name, setName] = useState("");
+    const [job, setJob] = useState("");
+    const { t, i18n } = useTranslation();
+
+    const handleCreateUser = async (event) => {
+        event.preventDefault();
+        let res = await postCreateUser(name, job);
+        if (res && res.id) {
             handleClose();
-            toast.success("Update user Success");
+            setName("");
+            setJob("");
+            toast.success("A user is created succeed!");
+            handleUpdateUser({ first_name: name, id: res.id });
         } else {
-            toast.error("Error..");
+            toast.error("An error...");
         }
     };
 
@@ -39,12 +29,12 @@ const ModalEditUser = (props) => {
         <>
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
-                    <Modal.Title>{t("modaledit.title1")}</Modal.Title>
+                    <Modal.Title>{t("modaladdnew.title1")}</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <form onSubmit={(event) => handleSubmit(event)}>
+                    <form>
                         <div className="form-group">
-                            <label>{t("modaledit.title2")}</label>
+                            <label>{t("modaladdnew.title2")}</label>
                             <input
                                 type="text"
                                 className="form-control"
@@ -58,16 +48,16 @@ const ModalEditUser = (props) => {
                 </Modal.Body>
                 <Modal.Footer>
                     <Button variant="secondary" onClick={() => handleClose()}>
-                        {t("modaledit.title3")}
+                        {t("modaladdnew.title3")}
                     </Button>
                     <Button
                         variant="primary"
-                        onClick={() => handleSubmitEditUser()}>
-                        {t("modaledit.title4")}
+                        onClick={(event) => handleCreateUser(event)}>
+                        {t("modaladdnew.title4")}
                     </Button>
                 </Modal.Footer>
             </Modal>
         </>
     );
 };
-export default ModalEditUser;
+export default ModalAddNew;

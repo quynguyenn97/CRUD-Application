@@ -92,8 +92,8 @@ const Header = (props) => {
                                                 {t("header.title7")}
                                             </NavDropdown.Item>
                                         )}
+                                        <Language></Language>
                                     </NavDropdown>
-                                    <Language></Language>
                                 </Nav>
                             </>
                         )}

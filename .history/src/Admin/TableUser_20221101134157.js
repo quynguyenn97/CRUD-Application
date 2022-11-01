@@ -317,6 +317,7 @@ const TableUser = () => {
                 handleClose={handleClose}
                 dataUserDelete={dataUserDelete}
                 handleDeleteUserFromModal={handleDeleteUserFromModal}
+                handleSubmit={handleSubmit}
             />
         </Container>
     );
