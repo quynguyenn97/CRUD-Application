@@ -124,7 +124,7 @@ const TableUser = () => {
             let file = event.target.files[0];
             if (file.type !== "text/csv") {
                 toast.error(
-                    "Only accept csv files! (Please use format's Export File)"
+                    "Only accept csv files! (Please use format Export file)"
                 );
                 return;
             }
@@ -142,7 +142,7 @@ const TableUser = () => {
                                 rawCSV[0][3] !== "LastName"
                             ) {
                                 toast.error(
-                                    "Wrong format header CSV file! (Please use format's Export File)"
+                                    "Wrong format header CSV file! ( please use format export file)"
                                 );
                             } else {
                                 let result = [];

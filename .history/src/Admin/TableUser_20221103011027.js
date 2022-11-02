@@ -123,9 +123,7 @@ const TableUser = () => {
         if (event.target && event.target.files && event.target.files[0]) {
             let file = event.target.files[0];
             if (file.type !== "text/csv") {
-                toast.error(
-                    "Only accept csv files! (Please use format's Export File)"
-                );
+                toast.error("Only accept csv files...");
                 return;
             }
             Papa.parse(file, {
@@ -141,18 +139,16 @@ const TableUser = () => {
                                 rawCSV[0][2] !== "FirstName" ||
                                 rawCSV[0][3] !== "LastName"
                             ) {
-                                toast.error(
-                                    "Wrong format header CSV file! (Please use format's Export File)"
-                                );
+                                toast.error("Wrong format header CSV file!");
                             } else {
                                 let result = [];
                                 rawCSV.map((item, index) => {
                                     if (index > 0 && item.length === 4) {
                                         let obj = {};
-                                        obj.id = item[0];
-                                        obj.email = item[1];
-                                        obj.first_name = item[2];
-                                        obj.last_name = item[3];
+                                        obj.Id = item[0];
+                                        obj.Email = item[1];
+                                        obj.FirstName = item[2];
+                                        obj.LastName = item[3];
                                         result.push(obj);
                                     }
                                 });

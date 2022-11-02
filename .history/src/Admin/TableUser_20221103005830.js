@@ -106,7 +106,7 @@ const TableUser = () => {
     const getUsersExport = (event, done) => {
         let result = [];
         if (listUsers && listUsers.length > 0) {
-            result.push(["Id", "Email", "FirstName", "LastName"]);
+            result.push(["Id", "Email", "First name", "Last name"]);
             listUsers.map((item, index) => {
                 let arr = [];
                 arr[0] = item.id;
@@ -123,36 +123,30 @@ const TableUser = () => {
         if (event.target && event.target.files && event.target.files[0]) {
             let file = event.target.files[0];
             if (file.type !== "text/csv") {
-                toast.error(
-                    "Only accept csv files! (Please use format's Export File)"
-                );
+                toast.error("Only accept csv files...");
                 return;
             }
             Papa.parse(file, {
                 // header: true,
                 complete: function (results) {
                     let rawCSV = results.data;
-                    console.log(rawCSV);
                     if (rawCSV.length > 0) {
-                        if (rawCSV[0] && rawCSV[0].length === 4) {
+                        if (rawCSV[0] && rawCSV[0].length === 3) {
                             if (
                                 rawCSV[0][0] !== "Id" ||
                                 rawCSV[0][1] !== "Email" ||
-                                rawCSV[0][2] !== "FirstName" ||
-                                rawCSV[0][3] !== "LastName"
+                                rawCSV[0][2] !== "First name" ||
+                                rawCSV[0][3] !== "Last name"
                             ) {
-                                toast.error(
-                                    "Wrong format header CSV file! (Please use format's Export File)"
-                                );
+                                toast.error("Wrong format header CSV file!");
                             } else {
                                 let result = [];
                                 rawCSV.map((item, index) => {
-                                    if (index > 0 && item.length === 4) {
+                                    if (index > 0 && item.length === 3) {
                                         let obj = {};
-                                        obj.id = item[0];
-                                        obj.email = item[1];
-                                        obj.first_name = item[2];
-                                        obj.last_name = item[3];
+                                        obj.email = item[0];
+                                        obj.first_name = item[1];
+                                        obj.last_name = item[2];
                                         result.push(obj);
                                     }
                                 });

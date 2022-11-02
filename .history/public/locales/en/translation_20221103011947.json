@@ -15,8 +15,8 @@
     },
     "modalstart": {
         "head": "CRUD APP Description:",
-        "title1": "- Use API from website: https://reqres.in/",
-        "title2": "- Use ReactJS, Redux-thunk, React Libraries to create CRUD app include:",
+        "title1": "Use API from website: https://reqres.in/",
+        "title2": "Use ReactJS, Redux-thunk, React Libraries to create CRUD app include:",
         "title3": "1. Login",
         "title4": "2. Logout",
         "title5": "3. Add User",
@@ -28,6 +28,7 @@
         "title11": "9. Import User from file.csv",
         "title12": "10. Export User to file.csv",
         "title13": "11. Change language",
+
         "end": "Close"
     },
     "private": {
