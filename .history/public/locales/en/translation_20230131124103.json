@@ -28,7 +28,6 @@
         "title11": "9. Import User from file.csv",
         "title12": "10. Export User to file.csv",
         "title13": "11. Change language",
-        "title14": "Please Login To Use App, Choose Settings -> Login",
         "end": "Close"
     },
     "private": {
@@ -38,7 +37,7 @@
     },
     "login": {
         "title1": "Login",
-        "title2": "Email:",
+        "title2": "Email address:",
         "title3": "Enter email",
         "title4": "Enter password",
         "title5": "Login",

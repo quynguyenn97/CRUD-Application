@@ -39,15 +39,10 @@ const Login = (props) => {
         <Container>
             <div className="login-container col-12 col-sm-4 ">
                 <h3 className="title">{t("login.title1")}</h3>
-                <span className="text ">
-                    {t("login.title2")}{" "}
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <span className="text-primary">eve.holt@reqres.in</span>
-                </span>
                 <span className="text">
-                    {t("login.title7")} &nbsp;
-                    <span className="text-primary">123</span>
+                    {t("login.title2")} &nbsp;eve.holt@reqres.in
                 </span>
+                <span className="text">{t("login.title7")} &nbsp;123</span>
                 <input
                     type="email"
                     className="form-control mt-1"

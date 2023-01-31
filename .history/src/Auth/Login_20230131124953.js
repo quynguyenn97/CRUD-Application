@@ -44,10 +44,7 @@ const Login = (props) => {
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <span className="text-primary">eve.holt@reqres.in</span>
                 </span>
-                <span className="text">
-                    {t("login.title7")} &nbsp;
-                    <span className="text-primary">123</span>
-                </span>
+                <span className="text">{t("login.title7")} &nbsp;123</span>
                 <input
                     type="email"
                     className="form-control mt-1"
