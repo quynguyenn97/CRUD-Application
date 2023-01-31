@@ -14,7 +14,6 @@ const PrivateRoute = (props) => {
                     <Alert variant="danger" className="mt-3">
                         <Alert.Heading>{t("private.title1")}</Alert.Heading>
                         <p>{t("private.title2")}</p>
-                        <p>{t("private.title3")}</p>
                     </Alert>
                 </Container>
             </>
